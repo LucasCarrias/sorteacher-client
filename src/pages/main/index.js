@@ -56,6 +56,7 @@ export default class Main extends Component {
             <strong>{task.title}</strong>
             <p className="description">{task.description}</p>
             <p>Data de entrega: {task.deliveryDate}</p>
+            <p>Tempo para apresentação: {task.presentationTime} minutos</p>
             <p> Alunos atribuidos: </p>
             <ol>
               {task.studients.map(studient => (
