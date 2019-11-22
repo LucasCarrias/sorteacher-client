@@ -1,93 +1,43 @@
-.product-list {
-  max-width: 700px;
-  margin: 20px auto 0;
-  padding: 0 20px;
-}
-
-.product-list article {
-  background: #FFF;
-  border: 1px solid #DDD;
-  border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.product-list article p {
-  font-size: 16px;
-  color: #888;
-  margin-top: 5px;
-  line-height: 24px;
-}
-
-.product-list article strong {
+.main-page .actions {
   display: flex;
-  justify-content: center;
-
+  margin: 10px 20px 10px 20px;
 }
 
-.product-list article li {
-  margin: 10px 0 0 10px;
-  background: none;
-  color: #222;
-  font-weight: bold;
-  font-size: 12px;
-  display: flex;
-  justify-content: left;
-  align-content: left;
-}
-
-.product-list .description {
-  display: flex;
-  border: 1px solid red;
-  justify-content: center;
-  align-content: center;
-  border-radius: 10px;
-  color: #999;
-  font-size: 14px;
+.main-page .actions a {
+  margin: 10px 10px 10px 10px;
   padding: 10px;
-}
-
-.product-list .editButton {
-  display: flex;
-  justify-content: right;
-  align-content: right;
-  padding: 10px;
-  margin-top: 10px;
   border-radius: 5px;
-  border: 0;
   background: #da552f;
   color: #FFF;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  height: 20px;
+  text-decoration: none;
 }
 
-.product-list .actions {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+.main-page .actions a:hover {
+  background: #DDD;
+  color: #da552f;
 }
 
-.product-list .actions button {
+.main-page .actions input[type='file'] {
+  display: none;
+}
+
+.main-page .actions label {
+  margin: 10px 10px 10px 10px;
   padding: 10px;
   border-radius: 5px;
-  border: 0;
   background: #da552f;
   color: #FFF;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  height: 20px;
 }
 
-.product-list .actions button[disabled]{
-  opacity: 0.5;
-  cursor: default;
-}
-
-.product-list .actions button:hover {
-  opacity: 0.7;
-}
-
-.product-list .actions button[disabled]:hover{
-  opacity: 0.5;
+.main-page .actions label:hover {
+  background: #DDD;
+  color: #da552f;
 }

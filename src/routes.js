@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Main from './pages/main';
+import ListTasks from './pages/listTasks';
 import Task from './pages/task';
 
 
@@ -10,6 +11,8 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={Main} />
       <Route path="/tasks/:id" component={Task} />
+      <Route path="/tasks/" component={ListTasks} />
+
 
     </Switch>
   </BrowserRouter>

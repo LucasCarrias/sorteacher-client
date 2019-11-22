@@ -10,3 +10,15 @@ body {
   background: #fafafa;
   color: #333;
 }
+
+button {
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background: #da552f;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
