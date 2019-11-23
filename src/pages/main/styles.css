@@ -3,41 +3,25 @@
   margin: 10px 20px 10px 20px;
 }
 
-.main-page .actions a {
-  margin: 10px 10px 10px 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background: #da552f;
+.main-page .actions .drop-container {
+  background: #fc6b43;
   color: #FFF;
-  font-size: 16px;
-  font-weight: bold;
+  border: 1px dashed #AAA;
+  border-radius: 4px;
   cursor: pointer;
-  height: 20px;
-  text-decoration: none;
-}
-
-.main-page .actions a:hover {
-  background: #DDD;
-  color: #da552f;
-}
-
-.main-page .actions input[type='file'] {
-  display: none;
-}
-
-.main-page .actions label {
-  margin: 10px 10px 10px 10px;
+  transition: background 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  text-align: center;
   padding: 10px;
-  border-radius: 5px;
-  background: #da552f;
-  color: #FFF;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  height: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 200px;
 }
 
-.main-page .actions label:hover {
-  background: #DDD;
-  color: #da552f;
+.main-page .actions .drop-container:hover{
+  background: #FFF;
+  color: #fc6b43;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }

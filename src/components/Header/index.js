@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './headerStyles.css';
+import './styles.css';
 
 const Header = () => {
   return(
-    <div>
-      <header id="main-header">Sorteacher</header>
+    <div className="main-header">
+      <a href="/tasks">Tarefas</a>
+      <a href="/">Sorteacher</a>
     </div>
   );
 };

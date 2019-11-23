@@ -50,9 +50,9 @@ export default class ListTasks extends Component {
     const { tasks, page, taskInfo } = this.state;
 
     return(
-      <div className="product-list">
+      <div className="task-list">
         {tasks.map(task => (
-          <article key={task._id}>
+          <div className="task" key={task._id}>
             <strong>{task.title}</strong>
             <p className="description">{task.description}</p>
             <p>Data de entrega: {task.deliveryDate}</p>
@@ -63,8 +63,10 @@ export default class ListTasks extends Component {
                 <li>{studient}</li>
               ))} 
             </ol>
-            <button className="editButton" onClick={this.editTask}>Editar</button>     
-          </article>
+            <div className="task-actions">
+              <a href={`/tasks/${task._id}`}>Editar</a>
+            </div>
+          </div>
         ))}
         <div className="actions">
           <button disabled={page===1} onClick={this.prevPage}>Anterior</button>

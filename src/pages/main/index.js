@@ -1,25 +1,47 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Dropzone from 'react-dropzone';
 import api from '../../services/api';
 import './styles.css';
+import csv from 'csv';
 
 export default class Main extends Component {
-  state = {};
+  renderDragMessage = (isDragActive, isDragReject) => {
+    if (!isDragActive){
+      return <p>Arraste o arquivo CSV aqui ou clique para fazer upload</p>
+    }
+    else {
+      return <p>Solte o arquivo aqui!</p>
+    }
+  }
+  onDrop = (e) =>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      csv.parse(reader.result, (err, data) => {
+        data.map(aluno => console.log(aluno[0]));
+      });
+    };
 
-  onChange(e){
-    let files = e.target.files;
-    console.log(files);
+    reader.readAsBinaryString(e[0]);
   }
 
   render(){
     return(
       <div className="main-page">
         <div className="actions">
-          <label for="select-file">Selecione o CSV</label>
-          <div onSubmit={this.getCSV}>
-            <input id="select-file" type="file" accept=".csv" onChange={(e)=> this.onChange(e)} />
-          </div>
-          <a href="/tasks">Listar Tarefas</a>
+          <Dropzone 
+          accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+          onDrop={this.onDrop}>
+            {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
+              <div className="drop-container"
+                {...getRootProps()}
+                isDragActive={isDragActive}
+                isDragReject={isDragReject}
+              >
+                <input {...getInputProps()} />
+                {this.renderDragMessage(isDragActive)}
+              </div>
+            )}
+          </Dropzone>
         </div>
       </div>
     );
