@@ -13,11 +13,16 @@ export default class Main extends Component {
       return <p>Solte o arquivo aqui!</p>
     }
   }
+
   onDrop = (e) =>{
+    var dataToSend = { studientsList: [] }
     const reader = new FileReader();
     reader.onload = () => {
-      csv.parse(reader.result, (err, data) => {
-        data.map(aluno => console.log(aluno[0]));
+      csv.parse(reader.result, async (err, data) => {
+        data.map(aluno => dataToSend["studientsList"].push(aluno[0]));
+        const response = await api.post('/studients', dataToSend);
+        if (response.status == 200){ alert('Upload bem sucedido!');}
+        else { alert('Upload mal sucedido.');}
       });
     };
 
