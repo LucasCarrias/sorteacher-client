@@ -40,7 +40,7 @@
 }
 
 .task-list .task .task-actions {
-  display: 100%;
+  display: flex;
   justify-content: space-between;
 }
 

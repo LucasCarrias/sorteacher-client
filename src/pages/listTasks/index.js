@@ -23,10 +23,6 @@ export default class ListTasks extends Component {
     this.setState({ tasks: docs, taskInfo, page });
   };
 
-  editTasks = async () => {
-    //
-  };
-
   prevPage = () => {
     const { page } = this.state;
 
@@ -65,6 +61,7 @@ export default class ListTasks extends Component {
             </ol>
             <div className="task-actions">
               <a href={`/tasks/${task._id}`}>Editar</a>
+              <a href="#">Excluir</a>
             </div>
           </div>
         ))}

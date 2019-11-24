@@ -47,6 +47,7 @@ export default class Main extends Component {
               </div>
             )}
           </Dropzone>
+          <a href="/createTask">Criar Tarefa</a>
         </div>
       </div>
     );
