@@ -10,7 +10,9 @@ export default class Main extends Component {
       return <p>Arraste o arquivo CSV aqui ou clique para fazer upload</p>
     }
     else {
-      return <p>Solte o arquivo aqui!</p>
+      return (
+        <p>Solte o arquivo aqui!</p>
+      );
     }
   }
 

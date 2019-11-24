@@ -41,6 +41,19 @@ export default class ListTasks extends Component {
     this.loadTasks(pageNumber);
   };
 
+  deleteTask = async(_id) =>{
+    const response = await api.delete(`/tasks/${_id}`);
+    const { page } = this.state;
+
+    if (response.status == 200){
+      alert('Tarefa exlcuída.');
+      this.loadTasks(page);
+    }
+    else{
+      alert('Algo deu errado.');
+    }
+  };
+
 
   render(){
     const { tasks, page, taskInfo } = this.state;
@@ -61,7 +74,7 @@ export default class ListTasks extends Component {
             </ol>
             <div className="task-actions">
               <a href={`/tasks/${task._id}`}>Editar</a>
-              <a href="#">Excluir</a>
+              <button onClick={() => {this.deleteTask(task._id)}}>Excluir</button>
             </div>
           </div>
         ))}
