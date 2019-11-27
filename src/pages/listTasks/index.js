@@ -64,7 +64,7 @@ export default class ListTasks extends Component {
           <div className="task" key={task._id}>
             <strong>{task.title}</strong>
             <p className="description">{task.description}</p>
-            <p>Data de entrega: {task.deliveryDate}</p>
+            <p>Data de entrega: {task.deliveryDate.slice(0, 10)}</p>
             <p>Tempo para apresentação: {task.presentationTime} minutos</p>
             <p> Alunos atribuidos: </p>
             <ol>
