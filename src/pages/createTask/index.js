@@ -18,7 +18,7 @@ export default class CreateTask extends Component {
     var object = {}
     data.forEach((value, key) => {object[key] = value});
     const response = await api.post('/tasks', object);
-    if (response.status == 200){
+    if (response.status === 200){
       alert('Tarefa cadastrada com sucesso!');
       document.getElementById("task-fields").reset();
     }
@@ -33,15 +33,18 @@ export default class CreateTask extends Component {
       <div className="task-form">
         <h2>Nova tarefa</h2>
         <form id="task-fields" onSubmit={this.handleSubmit}>
-          <input type="text" autoFocus name="title" id="title" placeholder="Digite o titulo"/>
+          <input type="text" autoFocus name="title" id="title" placeholder="Digite o titulo" required/>
           <br/>
-          <textarea cols="40" rows="10" name="description" id="description" placeholder="Digite a descrição"></textarea>
+          <textarea cols="40" rows="10" name="description" id="description" placeholder="Digite a descrição" required></textarea>
           <p>Data de entrega: </p>
-          <input type="date" name="deliveryDate" id="deliveryDate" placeholder="Data de entrega"/>
+          <input type="date" name="deliveryDate" id="deliveryDate" placeholder="Data de entrega" required/>
           <br></br>
-          <input type="number" name="presentationTime" id="presentationTime" placeholder="Minutos para apresentação"/>
+          <input type="number" name="presentationTime" id="presentationTime" placeholder="Minutos para apresentação" required/>
           <br/>
-          <button type="submit">Enviar</button>
+          <div className="actions">
+            <button type="submit">Enviar</button>
+            <a href="/tasks">Cancelar</a>
+          </div>
         </form>
       </div>
     );

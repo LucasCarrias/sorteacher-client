@@ -23,7 +23,7 @@ export default class Main extends Component {
       csv.parse(reader.result, async (err, data) => {
         data.map(aluno => dataToSend["studientsList"].push(aluno[0]));
         const response = await api.post('/studients', dataToSend);
-        if (response.status == 200){ alert('Upload bem sucedido!');}
+        if (response.status === 200){ alert('Upload bem sucedido!');}
         else { alert('Upload mal sucedido.');}
       });
     };

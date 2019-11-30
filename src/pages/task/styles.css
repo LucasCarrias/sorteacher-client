@@ -1,18 +1,33 @@
-.product-info {
-  max-width: 700px;
-  margin: 20px auto 0;
-  padding: 20px;
-  background: #fff;
+.task-form {
+  margin: 10px;
+  padding: 10px;
+}
+
+.task-form input, textarea {
+  margin: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
   border-radius: 5px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 600px;
+  min-width: 200px;
+  text-align: justify;
 }
 
-.product-info h1 {
-  font-size: 32px;
+.task-form p{
+  margin: 10px;
+  font-weight: bold;
 }
 
-.product-info p {
-  color: #666;
-  line-height: 24px;
-  margin-top: 5px;
+.task-form .actions {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-form .invisibles {
+  display: none;
 }

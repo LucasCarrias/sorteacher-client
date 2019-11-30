@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -45,7 +44,7 @@ export default class ListTasks extends Component {
     const response = await api.delete(`/tasks/${_id}`);
     const { page } = this.state;
 
-    if (response.status == 200){
+    if (response.status === 200){
       alert('Tarefa exlcuída.');
       this.loadTasks(page);
     }
@@ -57,7 +56,7 @@ export default class ListTasks extends Component {
 
   render(){
     const { tasks, page, taskInfo } = this.state;
-
+    
     return(
       <div className="task-list">
         {tasks.map(task => (
