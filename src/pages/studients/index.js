@@ -8,14 +8,12 @@ export default class Studients extends Component {
   }
 
   async componentDidMount(){
-    const response = await api.get('/studients');
-
-    this.setState({ studientsList: response.data[0].studientsList });
+    const response = await api.get('/studients/list');
+    this.setState({ studientsList: response.data.studientsList });
   }
 
   render(){
     const { studientsList } = this.state;
-
     return(
       <div className="studients">
         {studientsList.map(studient => (
