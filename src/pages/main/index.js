@@ -44,7 +44,7 @@ export default class Main extends Component {
                 isDragActive={isDragActive}
                 isDragReject={isDragReject}
               >
-                <input {...getInputProps()} />
+                <input {...getInputProps()}/>
                 {this.renderDragMessage(isDragActive)}
               </div>
             )}

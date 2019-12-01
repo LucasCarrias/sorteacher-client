@@ -5,6 +5,7 @@ import Main from './pages/main';
 import ListTasks from './pages/listTasks';
 import Task from './pages/task';
 import CreateTask from './pages/createTask';
+import Studients from './pages/studients';
 
 
 const Routes = () => (
@@ -14,6 +15,8 @@ const Routes = () => (
       <Route path="/tasks/:id" component={Task} />
       <Route path="/tasks/" component={ListTasks} />
       <Route path="/createTask" component={CreateTask} />
+      <Route path="/studients" component={Studients} />
+
 
     </Switch>
   </BrowserRouter>

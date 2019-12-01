@@ -22,8 +22,8 @@
 }
 
 .task-form .actions {
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 640px;
   display: flex;
   justify-content: space-between;
 }
